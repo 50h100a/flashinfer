@@ -76,6 +76,7 @@ _DECODE_MAX_TOKENS = 64
 # decode-dsv4 instantiation set. Shapes outside this table fall through to
 # decode-dsv3_2 / prefill. NH=8 is the small-TP corner case; the kernel pads
 # the head tile to HPB=16 with zero-Q rows and gates writes by NUM_HEADS.
+# Keep list synchronized with `launch_sparse_mla_decode_dsv4``.
 _DECODE_DSV4_DISPATCH = frozenset(
     {
         (8, 128),

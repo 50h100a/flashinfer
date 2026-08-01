@@ -134,6 +134,7 @@ static bool launch_decode_dsv4_impl(const bf16* Q, const uint8_t* KV_cache, cons
 // Public surface — explicit instantiation switch over the PR-body bench grid.
 // DSV4 only, page_block_size=64 only. NUM_HEADS ∈ {8, 16, 32, 64, 128},
 // TOPK ∈ {128, 256, 512, 1024}.
+// Keep DSV4_DISPATCH list synchronized with `_DECODE_DSV4_DISPATCH`.
 bool launch_sparse_mla_decode_dsv4(ModelType mt, int num_heads, int topk, int page_block_size,
                                    int num_tokens, int num_splits, const bf16* Q,
                                    const uint8_t* KV_cache, const int32_t* indices, bf16* mid_out,
